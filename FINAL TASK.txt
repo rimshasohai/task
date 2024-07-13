@@ -1,0 +1,43 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+def length_of_longest_substring(s: str) -> int:
+    # Your code here
+    l=[] # consider list l in which we append each character of a string s
+    q=[] # consider list q in which we append unique and non repeating character of a string s
+    a = "" # consider an empty string a
+    for i in s: # Iterating loop for characters within the string
+        l.append(i) # Appending each character of the string in list l
+        
+        if i not in q: 
+           q.append(i) # Appending unique character of the string in list q
+           a+=i # Adding unique character in the string a
+    
+    n=len(a) #  Finding the length of string a and assign it to n
+    #  Code for finding the substrings of the string s
+    #  Then returning the length of substring
+    if a[0:3] in s: 
+        return len(a) 
+    if a in s:  
+        return len(a)
+        
+    yo=a[0:3]  
+    ey=a[1:4] 
+    if a[0:3] in s:
+        return len(yo)
+        
+    elif a[1:4] in s:
+        return len(ey)   
+        
+        
+    pass       
+           
+# Example test cases
+
+print(length_of_longest_substring("abcabcbb"))  # Expected output: 3
+print(length_of_longest_substring("bbbbb"))     # Expected output: 1
+print(length_of_longest_substring("pwwkew"))    # Expected output: 3
+# Extra Test Cases
+print(length_of_longest_substring("abcdef"))    
+print(length_of_longest_substring("aabbcc"))    
+print(length_of_longest_substring("aabcbdef"))  
+print(length_of_longest_substring("au"))    
